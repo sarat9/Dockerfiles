@@ -1,0 +1,43 @@
+#Download base image ubuntu 16.04
+FROM ubuntu:16.04
+MAINTAINER sarat.e99@gmail.com
+
+# Update Software repository
+RUN apt-get update 
+
+RUN apt-get install -y dialog \
+     && apt-get install -y apt-utils \
+     && apt-get install -y python-software-properties \
+     && apt-get install -y software-properties-common 
+
+# Oracle Java (JDK) Installer
+RUN add-apt-repository ppa:webupd8team/java 
+
+RUN apt-get update 
+
+# Accepting Oracle licence
+RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
+
+RUN apt-get install -y oracle-java8-installer \ 
+    && apt-get install -y oracle-java8-set-default 
+
+ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
+ENV JRE_HOME /usr/lib/jvm/java-8-oracle/jre
+
+RUN apt-get install -y maven \
+    && apt-get install -y git 
+
+RUN git clone https://github.com/spring-projects/spring-petclinic.git
+
+
+WORKDIR /vsteer-api/
+
+EXPOSE 8080
+
+RUN mvn clean install
+
+WORKDIR /spring-petclinic/target/
+
+CMD ["java","-jar","spring-petclinic-1.5.1.jar"]
+
+
