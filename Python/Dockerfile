@@ -5,13 +5,13 @@ MAINTAINER sarat.e99@gmail.com Sarat Chandra E
 WORKDIR /app
 
 #Give your Repository
-RUN git clone https://github.com/ahfarmer/emoji-search.git
+RUN git clone https://github.com/render-examples/flask-hello-world.git
 
 FROM python:3
 
 WORKDIR /app
 
-COPY --from=repo /app/emoji-search /app 
+COPY --from=repo /app/flask-hello-world /app 
 
 RUN pip install flask waitress
 
