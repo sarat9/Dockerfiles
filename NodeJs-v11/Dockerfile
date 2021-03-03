@@ -1,12 +1,12 @@
 FROM alpine/git as repo
 MAINTAINER sarat.e99@gmail.com Sarat Chandra E
-# Dockerfile to run NodeJs or ExpressJS app
+# Dockerfile to run NodeJs 11 or ExpressJS app
 
 WORKDIR /app
 
 RUN git clone https://github.com/jatins/express-hello-world
 
-FROM node:8
+FROM node:11
 
 WORKDIR /app
 

@@ -20,5 +20,8 @@ EXPOSE 4202
 
 RUN ["npm", "run", "build"]
 
-#Give your server.js path location - dist/ or build/ or so
-CMD ["node", "build/server.js"]
+#Give your server.js path location - dist/ or build/ or so if u have node server file
+#CMD ["node", "build/server.js"]
+# OR
+#Runs in Development Mode
+CMD ["npm", "start"] 

@@ -1,6 +1,6 @@
 FROM alpine/git as repo
 MAINTAINER sarat.e99@gmail.com Sarat Chandra E
-# Dockerfile to run NodeJs or ExpressJS app
+# Dockerfile to run NodeJs 8 or ExpressJS app
 
 WORKDIR /app
 

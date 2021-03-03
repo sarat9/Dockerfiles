@@ -1,4 +1,5 @@
 
+#Docker file to run Angular app in Dev Mode
 
 
 Running production mode on Node is not recommended. Use expressjs or another server instead.

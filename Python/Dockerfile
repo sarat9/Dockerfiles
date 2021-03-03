@@ -13,7 +13,7 @@ WORKDIR /app
 
 COPY --from=repo /app/flask-hello-world /app 
 
-RUN pip install flask waitress
+RUN pip install flask flask_cors waitress
 
 EXPOSE 4202
 

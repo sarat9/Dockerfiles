@@ -1,6 +1,6 @@
 #Download base image ubuntu 16.04
 FROM ubuntu:16.04
-MAINTAINER sarat.e99@gmail.com
+MAINTAINER sarat.e99@gmail.com Sarat Chandra E
 
 # Update Software repository
 RUN apt-get update 
